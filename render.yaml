@@ -1,0 +1,29 @@
+services:
+  # Backend API Service
+  - type: web
+    name: tsrcnc-ai-backend
+    env: node
+    buildCommand: cd backend && npm install
+    startCommand: cd backend && node server.js
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      # Add these in Render dashboard:
+      # - GEMINI_API_KEY
+      # - SUPABASE_URL
+      # - SUPABASE_SERVICE_KEY
+      # - OPENAI_API_KEY
+      # - ADMIN_PASSWORD
+    
+  # Frontend Static Site
+  - type: web
+    name: tsrcnc-ai-frontend
+    env: static
+    buildCommand: cd frontend && npm install && npm run build
+    staticPublishPath: frontend/dist
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
