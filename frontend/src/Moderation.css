@@ -1,0 +1,232 @@
+.moderation-login {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+    padding: 20px;
+}
+
+.login-box {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 40px;
+    max-width: 400px;
+    width: 100%;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+}
+
+.login-box h2 {
+    margin-bottom: 10px;
+    color: #667eea;
+}
+
+.login-box p {
+    margin-bottom: 30px;
+    opacity: 0.8;
+}
+
+.login-box input {
+    width: 100%;
+    padding: 12px 15px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: #fff;
+    margin-bottom: 15px;
+    outline: none;
+}
+
+.login-box input:focus {
+    border-color: #667eea;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.login-box button {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.login-box button:hover:not(:disabled) {
+    transform: scale(1.02);
+    box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+}
+
+.login-box button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.moderation-panel {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+    padding: 40px 20px;
+    color: #fff;
+}
+
+.moderation-header {
+    max-width: 900px;
+    margin: 0 auto 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.moderation-header h2 {
+    color: #667eea;
+}
+
+.moderation-header .report-count {
+    background: rgba(255, 152, 0, 0.2);
+    padding: 8px 15px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 152, 0, 0.5);
+    color: #ff9800;
+    font-weight: 600;
+}
+
+.no-reports {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 60px 20px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 15px;
+}
+
+.no-reports h3 {
+    color: #4caf50;
+    margin-bottom: 10px;
+}
+
+.reported-item {
+    max-width: 900px;
+    margin: 0 auto 20px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.report-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.report-header .report-count {
+    background: rgba(244, 67, 54, 0.2);
+    padding: 5px 12px;
+    border-radius: 15px;
+    border: 1px solid rgba(244, 67, 54, 0.5);
+    color: #f44336;
+    font-weight: 600;
+    font-size: 0.9em;
+}
+
+.status {
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 0.85em;
+    font-weight: 600;
+}
+
+.status.hidden {
+    background: rgba(156, 39, 176, 0.2);
+    border: 1px solid rgba(156, 39, 176, 0.5);
+    color: #9c27b0;
+}
+
+.status.visible {
+    background: rgba(76, 175, 80, 0.2);
+    border: 1px solid rgba(76, 175, 80, 0.5);
+    color: #4caf50;
+}
+
+.qa-content {
+    margin-bottom: 15px;
+}
+
+.question,
+.answer {
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 8px;
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+.question strong,
+.answer strong {
+    color: #667eea;
+    margin-right: 8px;
+}
+
+.qa-stats {
+    font-size: 0.85em;
+    opacity: 0.7;
+    margin-bottom: 15px;
+}
+
+.moderation-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.approve-btn,
+.delete-btn {
+    flex: 1;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    border: none;
+}
+
+.approve-btn {
+    background: rgba(76, 175, 80, 0.2);
+    border: 1px solid rgba(76, 175, 80, 0.5);
+    color: #4caf50;
+}
+
+.approve-btn:hover {
+    background: rgba(76, 175, 80, 0.3);
+    transform: scale(1.02);
+}
+
+.delete-btn {
+    background: rgba(244, 67, 54, 0.2);
+    border: 1px solid rgba(244, 67, 54, 0.5);
+    color: #f44336;
+}
+
+.delete-btn:hover {
+    background: rgba(244, 67, 54, 0.3);
+    transform: scale(1.02);
+}
+
+@media (max-width: 768px) {
+    .moderation-header {
+        flex-direction: column;
+        gap: 15px;
+        align-items: flex-start;
+    }
+
+    .moderation-actions {
+        flex-direction: column;
+    }
+}
