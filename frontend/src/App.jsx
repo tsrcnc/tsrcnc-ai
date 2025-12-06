@@ -47,7 +47,7 @@ function App() {
         content: msg.content
       }));
 
-      const response = await fetch('http://localhost:3000/api/chat', {
+      const response = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:3000'}/api/chat`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -76,7 +76,7 @@ function App() {
 
   const rateAnswer = async (qaId, type) => {
     try {
-      await fetch('http://localhost:3000/api/rate-answer', {
+      await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:3000'}/api/rate-answer`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ qaId, type })
@@ -90,7 +90,7 @@ function App() {
     if (!confirm('Report this answer as incorrect?')) return;
 
     try {
-      const response = await fetch('http://localhost:3000/api/report-answer', {
+      const response = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:3000'}/api/report-answer`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ qaId })

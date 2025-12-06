@@ -11,7 +11,7 @@ function Moderation() {
         setLoading(true);
         try {
             const response = await fetch(
-                `http://localhost:3000/api/admin/reported-answers?password=${encodeURIComponent(password)}`
+                `${import.meta.env.VITE_API_URL || 'http://localhost:3000'}/api/admin/reported-answers?password=${encodeURIComponent(password)}`
             );
 
             if (response.ok) {
@@ -30,7 +30,7 @@ function Moderation() {
 
     const approveAnswer = async (qaId) => {
         try {
-            await fetch('http://localhost:3000/api/admin/approve-answer', {
+            await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:3000'}/api/admin/approve-answer`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ password, qaId })
@@ -47,7 +47,7 @@ function Moderation() {
         if (!confirm('Permanently delete this answer?')) return;
 
         try {
-            await fetch('http://localhost:3000/api/admin/delete-answer', {
+            await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:3000'}/api/admin/delete-answer`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ password, qaId })

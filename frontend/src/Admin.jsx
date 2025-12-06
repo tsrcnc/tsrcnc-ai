@@ -16,7 +16,7 @@ function Admin() {
 
     const fetchStats = async () => {
         try {
-            const response = await fetch('http://localhost:3000/api/stats');
+            const response = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:3000'}/api/stats`);
             const data = await response.json();
             setStats(data);
         } catch (error) {
@@ -34,7 +34,7 @@ function Admin() {
         setMessage('📤 Processing content...');
 
         try {
-            const response = await fetch('http://localhost:3000/api/upload-text', {
+            const response = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:3000'}/api/upload-text`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
